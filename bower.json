@@ -1,0 +1,14 @@
+{
+  "name": "fileTree",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular-route": "~1.4.2",
+    "angular": "~1.4.2",
+    "ngstorage": "~0.3.9"
+  },
+  "resolutions": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.2"
+  }
+}

@@ -1,0 +1,24 @@
+<div class="container">
+
+    <script type="text/ng-template"  id="tree_item_renderer.html">
+        <span ng-click="ctrl.triggerPanel(data)" ng-show="!data.edit">{{data.name}}</span>
+        <input type="text" ng-model="data.new_node_name" ng-show="data.edit" ng-keypress="ctrl.save(data, $event)" />
+        <button ng-click="ctrl.add(data)" title="Add node">
+            <img src="assets/images/add.png" />
+        </button>
+        <button ng-click="ctrl.delete(data)" ng-show="data.nodes.length > 0" title="Delete nodes">
+            <img src="assets/images/delete.png" />
+        </button>
+        <button ng-click="ctrl.edit(data)" title="Edit node name">
+            <img src="assets/images/edit.png" />
+        </button>
+        <ul>
+            <li ng-repeat="data in data.nodes" ng-include="'tree_item_renderer.html'" ng-class="{'open': data.open && data.nodes.length, 'close': !data.open && data.nodes.length}"></li>
+        </ul>
+    </script>
+
+    <ul>
+        <li ng-repeat="data in ctrl.tree" ng-include="'tree_item_renderer.html'"></li>
+    </ul>
+
+</div>
